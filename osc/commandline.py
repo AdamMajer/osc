@@ -4470,6 +4470,7 @@ Please submit there instead, or use --nodevelproject to force direct submission.
         project, package = pop_project_package_from_args(
             args, package_is_optional=True
         )
+        project = self._process_project_name(project)
         ensure_no_remaining_args(args)
 
         msg = opts.message or edit_message()
@@ -7644,6 +7645,7 @@ Please submit there instead, or use --nodevelproject to force direct submission.
             default_project='.',
             default_package='.',
         )
+        project = self._process_project_name(project)
         ensure_no_remaining_args(args)
 
         if opts.repo:
